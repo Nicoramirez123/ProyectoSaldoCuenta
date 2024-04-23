@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de cuentas</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-4" >
+    <h2 class="text-center mb-4">Listado de cuentas</h2>
+
+    <br>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Saldo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cuenta : ${cuentas}">
+            <td th:text="${cuenta.id}">ID</td>
+            <td th:text="${cuenta.documento}">Documento</td>
+            <td th:text="${cuenta.nombre}">Nombre</td>
+            <td th:text="${cuenta.apellido}">Apellido</td>
+            <td th:text="${cuenta.email}">Email</td>
+            <td th:text="${cuenta.saldo}">Saldo</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    <br>
+<div class = "text-center">
+    <a class="btn btn-primary btn-lg" type="button" href="/">Volver</a>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-5z8sf90RjALW+f4L4F2wwFjxcMHOrLc6q5zAjzHCmPZaIw/jFcZ7xjUC3elGz3rN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shCv9K+8xR5S5hN5Lh+9V5S49tSJoBS1pdDIN"
+        crossorigin="anonymous"></script>
+</body>
+</html>
